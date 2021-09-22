@@ -5,7 +5,7 @@ import numpy as np
 class ALEEnvironment:
     def __init__(self, rom_file, args=None):
 
-        from ale_python_interface import ALEInterface
+        from ale_py import ALEInterface
         self.ale = ALEInterface()
         
         # Set Env Variables

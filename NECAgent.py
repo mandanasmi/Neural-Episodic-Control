@@ -2,8 +2,10 @@ from __future__ import division
 
 import numpy as np
 import tensorflow as tf
-import scipy#.misc.imresize
-#import cv2
+from functools import reduce
+from past.builtins import xrange
+import scipy
+import cv2
 
 import knn_dictionary
 
@@ -449,8 +451,7 @@ def greyscale_preprocessor(state):
 
 def deepmind_preprocessor(state):
     state = greyscale_preprocessor(state)
-    #state = np.array(cv2.resize(state, (84, 84)))
-    resized_screen = scipy.misc.imresize(state, (110,84))
-    state = resized_screen[18:102, :]
+    state = np.array(cv2.resize(state, (84, 84)))
+    #state = scipy.misc.imresize(state, (84,84))
     return state
 

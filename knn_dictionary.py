@@ -2,6 +2,7 @@
 from collections import OrderedDict
 import numpy as np
 from sklearn.neighbors import BallTree, KDTree
+from past.builtins import xrange
 
 # Base class
 class LRU_KNN:
